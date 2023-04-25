@@ -1,0 +1,95 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: #d8d8d8;
+}
+
+.app {
+    width: 400px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 3px #000;
+}
+#form-1{
+    padding-bottom: 36px;
+}
+.form__header {
+    text-align: center;
+    padding: 12px;
+}
+.form__header h2 {
+    color: goldenrod;
+}
+.form__header p {
+    padding-bottom: 10px;
+    font-weight: 600;
+    font-style: italic;
+    opacity: 0.4;
+    border-bottom: 2px solid;
+}
+.form__group{
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px;
+    margin-bottom: 12px;
+}
+.form__title{
+    padding-bottom: 8px;
+    font-size: 15px;
+    color: goldenrod;
+}
+.form__input{
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 8px 4px;
+}
+.form__group.active .form__input{
+    border: 2px solid red;
+}
+.input__radio{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    opacity: .8;
+}
+.input__checkbox{
+    display: flex;
+    flex-direction: column;
+}
+.form__message{
+    height: 16px;
+    font-size: 15px;
+}
+.form__message{
+    display: none;
+    font-size: 13px;
+    color: red;
+    font-weight: 600;
+}
+.form__group.active .form__message{
+    display: block;
+}
+.form__button{
+    text-align: center;
+    padding: 0 12px;
+}
+.btn{
+    width: 100%;
+    border: none;
+    padding: 12px;
+    color: #fff;
+    background-color: rgb(124, 93, 16);
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn:hover{
+    opacity: 0.8;
+}

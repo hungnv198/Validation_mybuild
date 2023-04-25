@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validattion</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="app">
+        <form action="POST" id="form-1">
+            <div class="form__header">
+                <h2>Thành viên đăng ký</h2>
+                <p>Trở thành người bán của HuneeShop</p>
+            </div>
+            <div class="form__group">
+                <label for="form__input--name" class="form__title">Nhập họ và tên đầy đủ</label>
+                <input name="inputname" id="form__input--name" type="text" placeholder="Ví dụ: Nguyễn Văn A" class="form__input">
+                <div class="form__message">
+                </div>
+            </div>
+            <div class="form__group">
+                <label for="form__input--avatar" class="form__title">Chọn ảnh đại diện</label>
+                <input name="inputavatar" id="form__input--avatar" type="file" class="form__input">
+                <div class="form__message">
+                </div>
+            </div>
+            <div class="form__group">
+                <label class="form__title">Giới tính</label>
+                <div class="input__radio">
+                    <span><input name="inputgender" value="male" type="radio"> Nam</span>
+                    <span><input name="inputgender" value="female" type="radio"> Nữ</span>
+                    <span><input name="inputgender" value="other" type="radio"> Khác</span>
+                </div>
+                <div class="form__message">
+                </div>
+            </div>
+            <div class="form__group">
+                <label for="form__input--province" class="form__title">Tỉnh / Thành phố</label>
+                <select name="inputprovince" id="form__input--province" type="select" class="form__input">
+                    <option value="">----Chọn tỉnh/thành phố----</option>
+                    <option value="hanoi">Hà Nội</option>
+                    <option value="hanam">Hà Nam</option>
+                    <option value="hatinh">Hà Tĩnh</option>
+                </select>
+                <div class="form__message">
+                </div>
+            </div>
+            <div class="form__group">
+                <label class="form__title">Sở thích</label>
+                <div class="input__checkbox">
+                    <span><input name="inputfavourite" value="football" type="checkbox"> Bóng đá</span>
+                    <span><input name="inputfavourite" value="music" type="checkbox"> Âm nhạc</span>
+                    <span><input name="inputfavourite" value="book" type="checkbox"> Sách</span>
+                </div>
+                <div class="form__message">
+                </div>
+            </div>
+            <div class="form__group">
+                <label for="form__input--email" class="form__title">Nhập email của bạn</label>
+                <input name="inputemail" id="form__input--email" type="text" placeholder="Ví dụ: abc@gmail.com" class="form__input">
+                <div class="form__message">
+                </div>
+            </div>
+            <div class="form__group">
+                <label for="form__input--password" class="form__title">Nhập mật khẩu</label>
+                <input name="inputpassword" id="form__input--password" type="text" placeholder="Nhập vào mật khẩu của bạn" class="form__input">
+                <div class="form__message">
+                </div>
+            </div>
+            <div class="form__group">
+                <label for="form__input--repassword" class="form__title">Nhập lại mật khẩu</label>
+                <input name="inputrepassword" id="form__input--repassword" type="text" placeholder="Xác nhận mật khẩu của bạn" class="form__input">
+                <div class="form__message">
+                </div>
+            </div>
+            <div class="form__button">
+                <input type="submit" value="Đăng ký" class="btn">
+            </div>
+        </form>
+    </div>
+    <script src="main.js"></script>
+    <script>
+        Validation({
+            form: "#form-1",
+            formGroup: ".form__group",
+            errorForm: ".form__message",
+            rules: [
+                // Validation.isRequired('#form__input--name'),
+                // Validation.isRequired('#form__input--email'),
+                // Validation.isEmail('#form__input--email'),
+                // Validation.isRequired('#form__input--password'),
+                Validation.isRequired('#form__input--avatar'),
+                // Validation.minLength('#form__input--password', 6),
+                // Validation.isRequired('#form__input--repassword'),
+                // Validation.isConfirmPassword('#form__input--repassword', ()=> {
+                //     return document.querySelector('#form-1 #form__input--password').value;
+                // }),
+                // Validation.isRequired('input[name="inputgender"]'),
+                // Validation.isRequired('#form__input--province'),
+                // Validation.isRequired('input[name="inputfavourite"]'),
+            ],
+            onSubmit : (data) => {
+                console.log(data)
+            },
+        })
+    </script>
+</body>
+</html>
